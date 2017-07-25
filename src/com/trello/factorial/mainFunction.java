@@ -6,24 +6,32 @@ public class mainFunction {
 	static int factorial(int n){
 		 if (n == 0 )    
 			    return 1; 
-
-			  else    
-			    return(n * factorial(n-1));    
+		 else if(n<0){
+			 int sonuc=n*factorial(n+1);
+			 return sonuc;
+		 }
+			  else {
+				 int sonuc=n * factorial(n-1);
+			    return(sonuc);  
+			  }
 			 }    
 	
+static void printFunction(int s){
+	
+	System.out.println(factorial(s));
+}
 
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
 		System.out.println("Sayý giriniz:");
 		int sayi=s.nextInt();
-		 if(sayi<0){
-			 System.out.println("Sýfýrdan büyük bir sayý giriniz");
-		 }else{
-		int k=factorial(sayi)	;
-		System.out.println(k);
+		factorial(sayi);
+		printFunction(sayi);
+		 
+	
 		 }
 		}
     
-}
+
 
 
